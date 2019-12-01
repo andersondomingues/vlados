@@ -15,7 +15,7 @@ export CPP
 
 BOOT_FLAGS = 
 
-LINKING_FLAGS = -ffreestanding -O2 -nostdlib 
+LINKING_FLAGS = -ffreestanding -O2 -nostdlib -Wall -Wextra
 LINKING_FLAGS := $(LINKING_FLAGS) -fdata-sections -ffunction-sections -Wl,--gc-sections
 #-lgcc
 KERNEL_FLAGS = -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti

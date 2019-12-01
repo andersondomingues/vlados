@@ -1,7 +1,7 @@
 #ifndef _String_H
 #define _String_H
 
-namespace Vlados{
+namespace VladOS{
 
 class String{
 

@@ -33,8 +33,8 @@ public:
 	static const size_t VGA_WIDTH = 80;
 	static const size_t VGA_HEIGHT = 25;
 
-	static inline uint8_t GetColor(enum vga_color fg, enum vga_color bg);
-	static inline uint16_t GetEntry(unsigned char uc, uint8_t color);
+	static uint8_t GetColor(enum vga_color fg, enum vga_color bg);
+	static uint16_t GetEntry(unsigned char uc, uint8_t color);
 };
  
 }
