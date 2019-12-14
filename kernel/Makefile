@@ -2,7 +2,7 @@ KERNEL_FLAGS := $(KERNEL_FLAGS) -Iinclude
 
 .PHONY: all
 
-all: String.o Video.o Terminal.o Kernel.o
+all: String.o Video.o Terminal.o Kernel.o Memory.o
 	cp *.o ../build
 
 String.o:
@@ -16,7 +16,10 @@ Terminal.o:
 	
 Kernel.o:
 	$(CPP) -c Kernel.cpp -o Kernel.o $(KERNEL_FLAGS) 
-	
+
+Memory.o:
+	$(CPP) -c Memory.cpp -o Memory.o $(KERNEL_FLAGS)
+
 clean:
 	rm -rf *.o
 	

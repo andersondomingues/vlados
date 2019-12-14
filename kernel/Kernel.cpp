@@ -11,16 +11,9 @@
 
 //code init
 void kernel_main2(){
-//	VladOS::Terminal* m = new VladOS::Terminal();
-//	m->Write("Hello, kernel World!\n", 20);
-
-//	VladOS::Terminal m;// = VladOS::Terminal();
-//	m.Write("Hello, kernel World!\n", 20);
-
-	VladOS::Terminal* m = new VladOS::Terminal();
-	m->Write('c');
 	
-	delete(m);
+	VladOS::Terminal* m = new VladOS::Terminal();
+	m->Write("Hello, kernel World!\n", 20);	
 }
  
 

@@ -27,9 +27,11 @@ export KERNEL_FLAGS
 all: $(BUILD_DIR)/$(IMAGE_NAME)
 	@echo `grub-file --is-x86-multiboot $(BUILD_DIR)/$(IMAGE_NAME)`
 	make -C iso
+	qemu-system-x86_64 iso/vlados.bin.iso
+
 
 $(BUILD_DIR)/$(IMAGE_NAME): $(BUILD_DIR)/boot.o $(BUILD_DIR)/Kernel.o
-	$(CPP) -T linker.ld -o $(BUILD_DIR)/$(IMAGE_NAME) $(BUILD_DIR)/boot.o $(BUILD_DIR)/Kernel.o $(LINKING_FLAGS) 
+	$(CPP) -T linker.ld -o $(BUILD_DIR)/$(IMAGE_NAME) $(BUILD_DIR)/boot.o $(BUILD_DIR)/Kernel.o $(BUILD_DIR)/Video.o $(BUILD_DIR)/Memory.o $(BUILD_DIR)/Terminal.o $(LINKING_FLAGS) 
 	
 $(BUILD_DIR)/boot.o:
 	make -C boot
